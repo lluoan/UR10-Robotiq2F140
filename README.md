@@ -27,4 +27,27 @@ https://github.com/BoyangZhangFromHKUST/UR10-Robotiq2F140/tree/main/modbus
 The control method of robotiq is from s-nam: https://github.com/s-nam/control_2f_gripper_and_ur10
 
 ## Control Strategy
+Connect UR10 to your PC with a wireline, set up the ip address and establish a two-way communication.
 
+Connect Robotiq gripper to your PC with a USB convert line, and do not forget to give it a 24V power.
+
+UR10:
+
+```roslaunch ur_robot_driver ur10_bringup.launch robot_ip:192.168.1.102```
+
+```roslaunch ur10_moveit_config motion_planning_execution.launch```
+
+```roslaunch ur10_moveit_config moveit_rviz.launch```
+
+Robotiq:
+
+```roscore```
+
+```rosrun robotiq_2f_gripper_control Robotiq2FGripperRtuNode.py /dev/ttyUSB0```
+
+```rosrun control_2f_gripper_and_ur10 gripper_test.py```
+
+Then you can control robot arm and robotiq 2F gripper respectively.
+
+## Summary
+In the first stage, we just attempt to find and solve problems in the process of using ROS noetic. In next stage, we will try to control the arm and gripper together. In the third stage, we will try to integrate them into a launch file. In the fourth stage, we will try using ROS2 control them!
