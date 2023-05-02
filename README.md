@@ -26,6 +26,7 @@ https://github.com/BoyangZhangFromHKUST/UR10-Robotiq2F140/tree/main/modbus
 
 The control method of robotiq is from s-nam: https://github.com/s-nam/control_2f_gripper_and_ur10
 
+Above all, there are five sub folders in the /src folder: three folders uploaded in the Stage1 branch + ur_driver + ur_description
 ## Control Strategy
 Connect UR10 to your PC with a wireline, set up the ip address and establish a two-way communication.
 
